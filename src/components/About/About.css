@@ -1,0 +1,100 @@
+.about {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.about__is_open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+  background-color: rgb(0, 0, 0, 0.65);
+}
+
+.about__container {
+  max-width: 1600px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  width: 70vw;
+  height: auto;
+  border-radius: 48px;
+}
+
+.about__poster {
+  max-width: 450px;
+  margin: 20px;
+  border-radius: 36px;
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 24px;
+  padding-right: 48px;
+}
+.about__heading {
+  display: flex;
+  flex-direction: column;
+}
+.about__body {
+  margin-bottom: 48px;
+}
+.about__title {
+  text-align: center;
+  margin-bottom: 0;
+}
+.about__subtitle {
+  margin: 12px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+.about__rating {
+  align-self: flex-end;
+}
+.about__genres {
+  font-size: 18px;
+  font-weight: 700;
+}
+.about__release {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: end;
+  padding-right: 48px;
+}
+
+.about__overview {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.about__close_button {
+  position: absolute;
+  top: -42px;
+  right: -36px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../../images/whiteCross.svg);
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 0.2s 0s ease;
+}
+.about__close_button:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s 0s ease;
+}

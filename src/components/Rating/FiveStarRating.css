@@ -1,0 +1,20 @@
+.rating__container {
+  display: flex;
+  align-items: center;
+  margin: 8px auto;
+}
+.lower__hidden {
+  opacity: 0;
+  background-color: rgb(255, 250, 250) y;
+}
+.lower__visible {
+  opacity: 1;
+  pointer-events: none;
+}
+.rate-me__hidden {
+  display: none;
+}
+.rate-me__visible {
+  font-size: 16px;
+  margin-right: 16px;
+}

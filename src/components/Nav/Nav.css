@@ -1,0 +1,30 @@
+.nav {
+  margin: 24px auto;
+  background-color: rgb(255, 255, 255);
+  max-width: 80%;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav__button_container {
+  margin-left: 5%;
+}
+.nav__button {
+  font-size: 18px;
+  margin: auto 12px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid rgb(151, 151, 151);
+  padding: 16px;
+}
+.nav__search {
+}
+.nav__search_button {
+  background-image: url("../../images/Search.svg");
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  margin: 14px 36px 10px auto;
+}

@@ -9,22 +9,44 @@
 .nav__button_container {
   margin-left: 5%;
 }
+
 .nav__button {
   font-size: 18px;
+  font-weight: 300;
   margin: auto 12px 0;
   background-color: transparent;
   border: none;
-  border-bottom: 4px solid rgb(151, 151, 151);
+
   padding: 16px;
 }
-.nav__search {
+.nav__button:hover {
+  color: #9b9a9a;
 }
-.nav__search_button {
-  background-image: url("../../images/Search.svg");
-  width: 28px;
-  height: 28px;
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  margin: 14px 36px 10px auto;
+.nav__button-active {
+  border-bottom: 3px solid rgb(151, 151, 151);
+}
+.nav__search {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 1300px) {
+  .nav__button {
+    margin: auto 0 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav__button {
+    font-size: 16px;
+  }
+  .nav__button_container {
+    margin-left: 3%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .nav {
+    position: relative;
+    transform: translateY(-80px);
+    z-index: 1;
+  }
 }

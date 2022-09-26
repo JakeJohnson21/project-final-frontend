@@ -1,7 +1,13 @@
 import React from "react";
 import Post from "../Post/Post";
 
-function Main({ collection, onAboutPopupClick, onPostClick, isOpen }) {
+function Main({
+  collection,
+  onAboutPopupClick,
+  onPostClick,
+  isOpen,
+  isLoading,
+}) {
   return (
     <main className="content">
       <section className="post__container">
@@ -12,6 +18,9 @@ function Main({ collection, onAboutPopupClick, onPostClick, isOpen }) {
             post={post}
             onAboutPopupClick={onAboutPopupClick}
             isOpen={isOpen}
+            isLoading={isLoading}
+            setStyle={"rating__container"}
+            postStyle={"post"}
           />
         ))}
       </section>

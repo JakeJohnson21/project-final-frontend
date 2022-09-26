@@ -17,3 +17,5 @@ h2 {
 @import url(components/Preloader/Preloader.css);
 @import url(components/Post/Post.css);
 @import url(components/Rating/FiveStarRating.css);
+@import url(components/Similar/Similar.css);
+@import url(components/Search/Search.css);

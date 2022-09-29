@@ -10,6 +10,12 @@
   box-sizing: border-box;
   box-shadow: 1px 5px 20px 1px rgba(148, 148, 148, 0.2);
   cursor: pointer;
+  overflow: hidden;
+  transition: all 0.7s ease;
+}
+.post:active {
+  box-shadow: 4px 8px 20px 5px rgba(148, 148, 148, 0.5);
+  animation: bulge 0.5s ease-in;
 }
 
 .post__title {
@@ -18,18 +24,21 @@
   margin: 0 auto;
   padding: 15px;
   text-align: center;
+  transition: all 0.7s ease;
 }
 
 .post__poster {
   border-radius: 25px;
   max-width: 95%;
   margin: 0 auto 12px;
+  transition: all 0.7s ease;
 }
 
 .post__overview {
   max-width: 80%;
   margin: 0 auto;
   padding: 20px 0;
+  transition: all 0.7s ease;
 }
 
 .post__rating {
@@ -37,26 +46,39 @@
   font-weight: 500;
   text-align: left;
   margin: 0 8px 0;
+  transition: all 0.7s ease;
 }
 
 @media screen and (max-width: 1500px) {
   .post {
     max-width: 250px;
     margin: 10px;
+    transition: all 0.7s ease;
   }
   .post__title {
     font-size: 16px;
     font-weight: 400;
+    transition: all 0.7s ease;
   }
 }
 @media screen and (max-width: 1000px) {
   .post {
     max-width: 200px;
     margin: 10px;
+    transition: all 0.7s ease;
   }
 }
-@media screen and (max-width: 700px) {
-}
 
-@media screen and (max-width: 540px) {
+@keyframes bulge {
+  0% {
+    transform: scale(1);
+    z-index: 10;
+  }
+  50% {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+  100% {
+    transform: scale(1);
+  }
 }

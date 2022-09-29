@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "../Post/Post";
+import Preloader from "../Preloader/Preloader";
 
 function Main({
   collection,
@@ -7,9 +8,12 @@ function Main({
   onPostClick,
   isOpen,
   isLoading,
+  pageTitle,
 }) {
   return (
     <main className="content">
+      <h1 className="page__title">{pageTitle}</h1>
+      <Preloader isLoading={isLoading} />
       <section className="post__container">
         {collection.map((post) => (
           <Post

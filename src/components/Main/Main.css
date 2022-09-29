@@ -1,34 +1,46 @@
 .content {
-  width: 100%;
-  margin: auto;
+  margin: auto 0;
   height: 100%;
+  position: relative;
 }
 .post__container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 60px 33px 0;
+  margin: 40px auto 0;
+  max-width: 1600px;
+  min-height: 100vh;
   background-color: transparent;
+}
+.page__title {
+  margin: 60px auto 0px;
+  text-align: center;
+  transition: all 0.7s ease;
 }
 
 @media screen and (max-width: 1500px) {
+  .post__container {
+    max-width: 80vw;
+    margin-bottom: 90px;
+  }
+  .page__title {
+    font-size: 52px;
+  }
 }
 @media screen and (max-width: 1000px) {
-  .content {
-    height: 100%;
-  }
   .post__container {
     width: 95vw;
-
     margin: 20px auto 50px;
   }
+  .page__title {
+    font-size: 50px;
+    margin-top: 40px;
+    text-align: center;
+  }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .post__container {
     width: 90vw;
-    position: relative;
-    margin: 20px auto 50px;
+    margin-top: 0px;
   }
-}
-@media screen and (max-width: 540px) {
 }

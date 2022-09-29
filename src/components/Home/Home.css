@@ -1,0 +1,90 @@
+.homepage {
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+}
+.homepage__title {
+  text-align: center;
+  margin: 50px auto;
+}
+.homepage__section {
+}
+
+.section__title {
+  margin: 40px auto 20px;
+  text-align: left;
+  max-width: 1600px;
+}
+.section__inner-carousel {
+  border-radius: 40px;
+  display: flex;
+  padding: auto;
+  margin: 0 auto;
+  overflow-x: scroll;
+  overflow-y: visible;
+
+  white-space: nowrap;
+  width: 100%;
+  align-items: flex-end;
+  background-color: rgb(255, 255, 255);
+}
+.outer-carousel {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 80px;
+  height: 350px;
+
+  border: 50px solid gray;
+  max-width: 1600px;
+
+  width: 70%;
+}
+.scroll-left {
+  background-color: transparent;
+  border: none;
+  background-image: url(../../images/leftArrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  left: -65px;
+}
+.scroll-right {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: -65px;
+
+  background-image: url(../../images/rightArrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100%;
+  width: 60px;
+}
+.homepage__post {
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 5/8;
+  height: 85%;
+  margin: 0 10px;
+}
+.homepage__post:hover {
+  width: 400px;
+  transition: width 0.5s ease-in-out;
+}
+.homepage__post img {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+.homepage__now-playing {
+}
+.homepage__top-rated {
+}
+.homepage__coming-soon {
+}

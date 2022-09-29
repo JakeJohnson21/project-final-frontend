@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "../Header/Header";
+import Home from "../Home/Home";
 import Nav from "../Nav/Nav";
 import Main from "../Main/Main";
 import About from "../About/About";
@@ -18,12 +19,13 @@ function App() {
   const [movieId, setMovieId] = useState("");
   const [movieData, setMovieData] = useState({});
   const [genres, setGenres] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [topRated, setTopRated] = useState([]);
   // const [popular, setPopular] = useState({});
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // GET the "now playing" collection with  brief data
   // to display on the post cover
@@ -36,8 +38,8 @@ function App() {
       .then((data) => {
         setNowPlaying(data.results);
       })
-      .catch((err) => console.error(`Error: ${err.status}`))
-      .finally(() => setIsLoading(false));
+      .then(setIsLoading(false))
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, []);
 
   useEffect(() => {
@@ -47,8 +49,8 @@ function App() {
       .then((data) => {
         setComingSoon(data.results);
       })
-      .catch((err) => console.error(`Error: ${err.status}`))
-      .finally(() => setIsLoading(false));
+      .then(setIsLoading(false))
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, []);
 
   useEffect(() => {
@@ -58,8 +60,8 @@ function App() {
       .then((data) => {
         setTopRated(data.results);
       })
-      .catch((err) => console.error(`Error: ${err.status}`))
-      .finally(() => setIsLoading(false));
+      .then(setIsLoading(false))
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, []);
 
   //Pass the movieId
@@ -72,8 +74,8 @@ function App() {
       .then((data) => {
         setSimilarMovies(data.results);
       })
-      .catch((err) => console.error(`Error: ${err.status}`))
-      .finally(() => setIsLoading(false));
+      .then(setIsLoading(false))
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, [selectedPost]);
 
   useEffect(() => {
@@ -84,22 +86,20 @@ function App() {
         setMovieData(movieData);
         const genreString = movieData.genres.map((item) => item.name);
         setGenres(genreString.join(" | "));
+        setIsLoading(false);
       })
-      .catch((err) => console.error(`Error: ${err.status}`))
-      .finally(() => setIsLoading(false));
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, [selectedPost]);
 
   useEffect(() => {
     setIsLoading(true);
-    setTimeout(() => {
-      api
-        .searchMovie(search)
-        .then((data) => {
-          setSearchResults(data.results);
-        })
-        .catch((err) => console.error(`Error: ${err.status}`))
-        .finally(() => setIsLoading(false));
-    }, 1000);
+    api
+      .searchMovie(search)
+      .then((data) => {
+        setSearchResults(data.results);
+      })
+      .then(setIsLoading(false))
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, [search]);
 
   function handlePostClick(post) {
@@ -109,6 +109,14 @@ function App() {
   function handleAboutPopupOpen() {
     setIsAboutOpen(true);
   }
+
+  function handleMobileMenuOpen() {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }
+  function handleCloseMobileMenu() {
+    setIsMobileMenuOpen(false);
+  }
+
   function handleClosePopup() {
     setIsAboutOpen(false);
   }
@@ -116,12 +124,35 @@ function App() {
   return (
     <section className="page">
       <Preloader isLoading={isLoading} preloadStyles={"preloader__app"} />
-      <Header />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        isOpen={isMobileMenuOpen}
+        handleOpen={handleMobileMenuOpen}
+        onClose={handleCloseMobileMenu}
+      />
 
-      <Nav setSearch={setSearch} search={search} />
+      <Nav
+        setSearch={setSearch}
+        search={search}
+        isOpen={isMobileMenuOpen}
+        onClose={handleCloseMobileMenu}
+      />
       <Switch>
+        <Route path="/home">
+          <Home
+            nowPlaying={nowPlaying}
+            comingSoon={comingSoon}
+            topRated={topRated}
+            onAboutPopupClick={handleAboutPopupOpen}
+            onPostClick={handlePostClick}
+            isOpen={isAboutPopupOpen}
+            isLoading={isLoading}
+          />
+        </Route>
         <Route path="/now-playing">
           <Main
+            pageTitle={"Now Playing"}
             isLoading={isLoading}
             collection={nowPlaying}
             onAboutPopupClick={handleAboutPopupOpen}
@@ -131,6 +162,7 @@ function App() {
         </Route>
         <Route path="/coming-soon">
           <Main
+            pageTitle={"Coming Soon"}
             path="/coming-soon"
             isLoading={isLoading}
             collection={comingSoon}
@@ -141,6 +173,7 @@ function App() {
         </Route>
         <Route path="/top-rated">
           <Main
+            pageTitle={"Top Rated Movies"}
             path="/coming-soon"
             isLoading={isLoading}
             collection={topRated}
@@ -151,6 +184,7 @@ function App() {
         </Route>
         <Route path="/search">
           <Main
+            pageTitle={"Search Results: "}
             closePopup={handleClosePopup}
             path="/search"
             isLoading={isLoading}

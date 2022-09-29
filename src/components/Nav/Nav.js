@@ -2,30 +2,34 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 
-function Nav({ search, setSearch }) {
+function Nav({ search, setSearch, isOpen, onClose }) {
   const [isComingSoonActive, setIsComingSoonActive] = useState(false);
   const [isNowPlayingActive, setIsNowPlayingActive] = useState(false);
   const [isTopRatedActive, setIsTopRatedActive] = useState(false);
 
   function handleIsComingSoonActive() {
+    onClose();
     setIsComingSoonActive(true);
     setIsNowPlayingActive(false);
     setIsTopRatedActive(false);
   }
   function handleIsNowPlayingActive() {
+    onClose();
     setIsNowPlayingActive(true);
     setIsTopRatedActive(false);
     setIsComingSoonActive(false);
   }
 
   function handleIsTopRatedActive() {
+    onClose();
     setIsTopRatedActive(true);
     setIsComingSoonActive(false);
     setIsNowPlayingActive(false);
   }
+  const mobileMenuClassName = `nav ${isOpen ? "mobile__menu_open" : ""}`;
 
   return (
-    <section className="nav">
+    <section className={mobileMenuClassName}>
       <div className="nav__button_container">
         <Link className="nav__link" to="/coming-soon">
           <button
@@ -59,7 +63,11 @@ function Nav({ search, setSearch }) {
         </Link>
       </div>
       <Link className="nav__search" to="/search">
-        <Search search={search} setSearch={setSearch} />
+        <Search
+          search={search}
+          setSearch={setSearch}
+          menuFormatStyles={"search__container"}
+        />
       </Link>
     </section>
   );

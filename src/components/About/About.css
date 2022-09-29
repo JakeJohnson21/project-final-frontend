@@ -67,6 +67,7 @@
   display: flex;
   align-items: center;
   transition: all 0.4s ease-in;
+  cursor: pointer;
 }
 .rate-me__visible {
   font-size: 2px;
@@ -133,7 +134,7 @@
   right: -36px;
   background-color: transparent;
   border: none;
-  background-image: url(../../images/whiteCross.svg);
+  background-image: url(../../images/whiteCrossAbout.svg);
   width: 50px;
   height: 50px;
   background-size: cover;
@@ -169,9 +170,10 @@
   max-width: 900px;
   justify-content: space-around;
   padding-top: 0;
-  margin: 0 auto 20px;
+  margin: 0 auto 50px;
   transition: all 0.45s ease-in;
   z-index: 2;
+  cursor: pointer;
 }
 .similar__post {
   display: flex;
@@ -184,10 +186,13 @@
   padding: 5px 1px;
   background-color: white;
   border-radius: 15px;
-
   margin: 1px 18px;
   transition: all 0.3s ease-in;
   box-shadow: 0px 2px 35px 3px rgba(40, 40, 40, 0.5);
+}
+.similar__post:active {
+  opacity: 0.6;
+  transition: 0.2 ease-in-out;
 }
 .similar__post > .post__poster {
   border-radius: 15px;
@@ -402,6 +407,7 @@
     border-radius: 35px;
     transition: all 0.3s ease-in;
     z-index: 10;
+    box-shadow: 0px 3px 15px 1px rgba(0, 0, 0, 0.6);
   }
 
   .about__content {
@@ -549,6 +555,7 @@
     right: 3%;
     top: 20px;
     transition: all 0.4s ease-in;
+    box-shadow: 1px 1px 8px 1px rgb(161, 161, 161);
   }
   .similar__post {
     padding: 8px 2px;

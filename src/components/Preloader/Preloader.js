@@ -1,3 +1,5 @@
+import React from "react";
+
 function Preloader({ isLoading }) {
   const whenLoading = isLoading ? "preloader__visible" : "preloader__hidden";
   return (

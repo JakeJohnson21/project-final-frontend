@@ -5,6 +5,21 @@ h2 {
   font-size: 40px;
   font-weight: 700;
 }
+button {
+  cursor: pointer;
+}
+/* div,
+button,
+p,
+span,
+img,
+section,
+input,
+i,
+Link,
+nav {
+  border: 1px solid red;
+} */
 
 @import url(fonts/fonts.css);
 @import url(vendor/normalize.css);
@@ -19,3 +34,7 @@ h2 {
 @import url(components/Rating/FiveStarRating.css);
 @import url(components/Similar/Similar.css);
 @import url(components/Search/Search.css);
+@import url(components/Home/Home.css);
+button {
+  transition: all 0.2s linear;
+}

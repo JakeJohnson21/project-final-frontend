@@ -5,15 +5,13 @@ import FiveStarRating from "../Rating/FiveStarRating";
 function Post({
   post,
   onPostClick,
-  onAboutPopupClick,
-  isOpen,
   isLoading,
   postStyle,
-  setStyle,
+  ratingStyle,
+  starColor,
 }) {
   function handlePostClick() {
     onPostClick(post);
-    onAboutPopupClick();
   }
 
   return (
@@ -28,7 +26,9 @@ function Post({
       <FiveStarRating
         ratingAverage={post.vote_average / 2}
         rateMeText={"rate-me__hidden"}
-        setStyle={"rate-me__hidden"}
+        setStyle={ratingStyle}
+        starSize={25}
+        fillColor={starColor}
       />
       <Preloader isLoading={isLoading} />
     </div>

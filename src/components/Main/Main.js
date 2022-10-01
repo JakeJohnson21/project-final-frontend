@@ -25,6 +25,7 @@ function Main({
             isLoading={isLoading}
             setStyle={"rating__container"}
             postStyle={"post"}
+            ratingStyle={"post__rating"}
           />
         ))}
       </section>

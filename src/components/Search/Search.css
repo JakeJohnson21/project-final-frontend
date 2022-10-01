@@ -1,6 +1,7 @@
 .search__container {
   position: relative;
   display: inline-block;
+  margin-right: 80px;
   font-size: 18px;
 }
 
@@ -60,6 +61,12 @@
     margin-right: 30px;
     transition: all 0.7s ease;
   }
+  .search__container {
+    margin-right: 0px;
+  }
+  .search__input {
+    width: 170px;
+  }
 }
 @media screen and (max-width: 1000px) {
   .nav {
@@ -82,7 +89,7 @@
     max-width: unset;
     font-weight: 400;
     transform: unset;
-    box-shadow: inset 0px 1px 8px 1px rgb(40, 40, 40, 0.35);
+    box-shadow: inset 0px 1px 2px 1px rgb(40, 40, 40, 0.35);
     border-radius: 40px;
     width: 80%;
     margin: 0 auto;
@@ -119,5 +126,11 @@
     right: 0;
     width: 20px;
     height: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search_input {
+    max-width: 50px;
+    padding: 9;
   }
 }

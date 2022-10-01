@@ -19,7 +19,7 @@ function Similar({
           isOpen={isOpen}
           isLoading={isLoading}
           postStyle={"similar__post"}
-          setStyle={"hide-rating"}
+          ratingStyle={"hide-rating"}
         />
       ))}
     </span>

@@ -15,7 +15,7 @@ function App() {
   const [nowPlaying, setNowPlaying] = useState([]);
   const [comingSoon, setComingSoon] = useState([]);
   const [isAboutPopupOpen, setIsAboutOpen] = useState(false);
-  const [selectedPost, setSelectedPost] = useState({});
+  const [selectedPost, setSelectedPost] = useState(null);
   const [movieId, setMovieId] = useState("");
   const [movieData, setMovieData] = useState({});
   const [genres, setGenres] = useState("");
@@ -67,47 +67,62 @@ function App() {
   //Pass the movieId
   // Load The extended movie data from the individual movies object
 
-  useEffect(() => {
-    setIsLoading(true);
-    api
-      .getSimilarMovies(movieId)
-      .then((data) => {
-        setSimilarMovies(data.results);
-      })
-      .then(setIsLoading(false))
-      .catch((err) => console.error(`Error: ${err.status}`));
-  }, [selectedPost]);
+  function handleSimilarMovies(movieId) {
+    if (selectedPost) {
+      setIsLoading(true);
+      api
+        .getSimilarMovies(movieId)
+        .then((data) => {
+          setSimilarMovies(data.results);
+        })
+        .then(setIsLoading(false))
+        .catch((err) => console.error(`Error: ${err.status}`));
+    }
+  }
+
+  function handleAboutMovieData(movieId) {
+    if (selectedPost) {
+      setIsLoading(true);
+      api
+        .getMovieData(movieId)
+        .then((movieData) => {
+          setMovieData(movieData);
+          const genreString = movieData.genres.map((item) => item.name);
+          setGenres(genreString.join(" | "));
+          setIsLoading(false);
+        })
+        .catch((err) => console.error(`Error: ${err.status}`));
+    }
+  }
+
+  function handleSearch(search) {
+    if (search) {
+      setIsLoading(true);
+      api
+        .searchMovie(search)
+        .then((data) => {
+          setSearchResults(data.results);
+        })
+        .then(setIsLoading(false))
+        .catch((err) => console.error(`Error: ${err.status}`));
+    }
+  }
 
   useEffect(() => {
-    setIsLoading(true);
-    api
-      .getMovieData(movieId)
-      .then((movieData) => {
-        setMovieData(movieData);
-        const genreString = movieData.genres.map((item) => item.name);
-        setGenres(genreString.join(" | "));
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(`Error: ${err.status}`));
-  }, [selectedPost]);
-
-  useEffect(() => {
-    setIsLoading(true);
-    api
-      .searchMovie(search)
-      .then((data) => {
-        setSearchResults(data.results);
-      })
-      .then(setIsLoading(false))
-      .catch((err) => console.error(`Error: ${err.status}`));
+    handleSearch(search);
   }, [search]);
+  useEffect(() => {
+    handleAboutMovieData(movieId);
+    handleSimilarMovies(movieId);
+  }, [selectedPost]);
 
   function handlePostClick(post) {
     setSelectedPost(post);
     setMovieId(post.id.toString());
+    setIsAboutOpen(true);
   }
   function handleAboutPopupOpen() {
-    setIsAboutOpen(true);
+    return setIsAboutOpen(true);
   }
 
   function handleMobileMenuOpen() {
@@ -118,6 +133,8 @@ function App() {
   }
 
   function handleClosePopup() {
+    setSelectedPost(null);
+    setSimilarMovies([]);
     setIsAboutOpen(false);
   }
 

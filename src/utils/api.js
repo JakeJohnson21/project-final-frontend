@@ -32,7 +32,7 @@ class Api {
   }
   getTopRated() {
     return fetch(
-      `${this._baseUrl}/movie/top_rated${this._params}${this._region}&page=3`,
+      `${this._baseUrl}/movie/top_rated${this._params}${this._region}&page=2`,
       {
         headers: this._headers,
       }
@@ -40,7 +40,6 @@ class Api {
   }
 
   searchMovie(search) {
-    console.log("API search: ", search);
     return fetch(
       `${this._baseUrl}/search/movie${this._params}&query=${search}${this._region}`,
       {

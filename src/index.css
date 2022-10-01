@@ -8,6 +8,7 @@ h2 {
 button {
   cursor: pointer;
 }
+
 /* div,
 button,
 p,
@@ -35,6 +36,7 @@ nav {
 @import url(components/Similar/Similar.css);
 @import url(components/Search/Search.css);
 @import url(components/Home/Home.css);
+@import url(components/Carousel/Carousel.css);
 button {
   transition: all 0.2s linear;
 }

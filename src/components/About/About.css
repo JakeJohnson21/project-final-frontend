@@ -10,10 +10,11 @@
   transition: all 0.3s ease-out;
   z-index: 10;
 }
-.border__close_button {
+.about__border {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  cursor: pointer;
 }
 
 .about__is_open {
@@ -47,6 +48,7 @@
   grid-area: 1 / 1 / 4 / 2;
   max-height: 865px;
   margin: 20px;
+  aspect-ratio: 4/6;
   position: relative;
   border-radius: 36px;
   transition: all 0.6s ease-in;
@@ -73,6 +75,12 @@
 .rate-me__visible {
   font-size: 2px;
   transition: all 0.6s ease-in;
+}
+.about__runtime {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 20px 0 0px;
 }
 .about__heading {
   grid-area: 1 / 2 / 2 / 3;
@@ -183,7 +191,7 @@
   .about__bottom-background {
     grid-area: 3 / 1 / 4 / 3;
     left: 20px;
-    overflow-y: visible;
+
     align-items: center;
     height: 95%;
     border-top-left-radius: 36px;
@@ -194,6 +202,11 @@
     width: auto;
     height: 95%;
     transition: all 0.6s ease-in;
+  }
+  .about__poster img {
+    aspect-ratio: 4/6;
+    width: 100%;
+    height: 100%;
   }
   .about__heading {
     position: relative;
@@ -221,17 +234,16 @@
   }
 
   .about__heading {
-    flex-direction: row;
     height: auto;
-    align-items: center;
-    flex-wrap: wrap;
     margin-top: 20px;
 
+    flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
   }
   .about__bottom-background {
     height: 85%;
-    overflow-y: scroll;
   }
   .about__poster {
     width: auto;
@@ -246,8 +258,9 @@
     text-align: left;
   }
   .about__rating {
-    flex-direction: row;
     margin: 0px 20px 0;
+
+    flex-direction: row;
   }
   .rate-me__visible {
     margin-bottom: 5px;
@@ -266,10 +279,10 @@
 }
 @media screen and (max-width: 1000px) {
   .about__content {
-    grid-template-columns: 300px auto;
-    column-gap: 20px;
-    grid-template-rows: auto auto 300px;
     height: auto;
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto 300px;
+    column-gap: 20px;
     transition: all 0.45s ease-in;
   }
   .about__title {
@@ -287,11 +300,11 @@
 
   .about__genres {
     position: absolute;
-    text-align: right;
     margin-bottom: 50px;
     max-width: 320px;
     right: 15px;
     top: 50px;
+    text-align: right;
     transition: all 0.6s ease-in;
   }
   .about__release {
@@ -323,7 +336,6 @@
   .about__bottom-background {
     position: absolute;
     bottom: 20px;
-
     left: 20px;
     right: 20px;
     height: 280px;

@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import Carousel from "../Carousel/Carousel";
-import Post from "../Post/Post";
+import { Link } from "react-router-dom";
 
 function Home({
   nowPlaying,
   topRated,
   comingSoon,
+  halloween,
   onAboutPopupClick,
   onPostClick,
   isOpen,
@@ -13,9 +14,25 @@ function Home({
 }) {
   return (
     <main className="homepage">
-      <h1 className="homepage__title">Welcome to RMDb</h1>
+      <section className="homepage__section homepage__halloween">
+        <Link to="/halloween" className="homepage__link">
+          <h2 className="section__title">Halloween is back</h2>
+        </Link>
+        <Carousel
+          collection={halloween}
+          isLoading={isLoading}
+          isOpen={isOpen}
+          onAboutPopupClick={onAboutPopupClick}
+          onPostClick={onPostClick}
+          carouselStyle={"carousel__coming-soon"}
+        />
+      </section>
+
       <section className="homepage__section homepage__now-playing">
-        <h2 className="section__title">Now playing movies</h2>
+        <Link to="/now-playing" className="homepage__link">
+          <h2 className="section__title">Now playing movies</h2>
+        </Link>
+
         <Carousel
           collection={nowPlaying}
           isLoading={isLoading}
@@ -25,9 +42,11 @@ function Home({
           carouselStyle={"carousel__now-playing"}
         />
       </section>
-
       <section className="homepage__section homepage__coming-soon">
-        <h2 className="section__title">Upcoming from hollywood</h2>
+        <Link to="/coming-soon" className="homepage__link">
+          <h2 className="section__title">Upcoming from hollywood</h2>
+        </Link>
+
         <Carousel
           collection={comingSoon}
           isLoading={isLoading}
@@ -37,9 +56,10 @@ function Home({
           carouselStyle={"carousel__coming-soon"}
         />
       </section>
-
       <section className="homepage__section homepage__top-rated">
-        <h2 className="section__title">Can't miss features</h2>
+        <Link to="/top-rated" className="homepage__link">
+          <h2 className="section__title">Can't miss features</h2>
+        </Link>
         <Carousel
           collection={topRated}
           isLoading={isLoading}
@@ -49,40 +69,6 @@ function Home({
           carouselStyle={"carousel__now-playing"}
         />
       </section>
-      {/* <section className="homepage__section homepage__coming-soon">
-        <h2 className="section__title">Coming soon to theaters</h2>
-        <div className="section__post-container">
-          {comingSoon.slice(0, 12).map((post) => (
-            <Post
-              onPostClick={onPostClick}
-              key={post.id}
-              post={post}
-              onAboutPopupClick={onAboutPopupClick}
-              isLoading={isLoading}
-              isOpen={isOpen}
-              postStyle={"homepage__post"}
-              setStyle=""
-            />
-          ))}
-        </div>
-      </section>
-      <section className="homepage__section homepage__top-rated">
-        <h2 className="section__title">Top Rated movies</h2>
-        <div className="section__post-container">
-          {nowPlaying.slice(0, 12).map((post) => (
-            <Post
-              onPostClick={onPostClick}
-              key={post.id}
-              post={post}
-              onAboutPopupClick={onAboutPopupClick}
-              isLoading={isLoading}
-              isOpen={isOpen}
-              postStyle={"homepage__post"}
-              setStyle=""
-            />
-          ))}
-        </div>
-      </section> */}
     </main>
   );
 }

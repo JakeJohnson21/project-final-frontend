@@ -10,6 +10,7 @@ function Search({ search, setSearch, menuFormatStyles }) {
       <input
         className="search__input"
         placeholder="Search movies"
+        required
         type="text"
         onChange={handleSearch}
         value={search}

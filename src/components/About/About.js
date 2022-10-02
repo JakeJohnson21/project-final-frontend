@@ -1,6 +1,6 @@
 import React from "react";
 import FiveStarRating from "../Rating/FiveStarRating";
-import Preloader from "../Preloader/Preloader";
+
 import Similar from "../Similar/Similar";
 
 function About({
@@ -8,18 +8,21 @@ function About({
   onClose,
   movieData,
   genres,
-  isLoading,
+
   onPostClick,
   onAboutPopupOpen,
   collection,
 }) {
+  const runHours = Math.floor(movieData.runtime / 60);
+  const runMinutes = movieData.runtime % 60;
+  const runtime = `${runHours} hr ${runMinutes} minutes`;
+
   const popupToggle = `about ${isOpen ? "about__is_open" : "about"}`;
 
   return (
     <section className={popupToggle}>
-      <div className="border__close_button" onClick={onClose}></div>
+      <div className="about__border" onClick={onClose}></div>
       <div className="about__container">
-        <Preloader isLoading={isLoading} />
         <div className="about__content">
           <img
             className="about__poster"
@@ -32,6 +35,7 @@ function About({
           <div className="about__heading">
             <h2 className="about__title">{movieData.title}</h2>
             <p className="about__subtitle">{movieData.tagline}</p>
+            <p className="about__runtime">{runtime}</p>
             <FiveStarRating
               ratingAverage={movieData.vote_average / 2}
               rateMeText={"rate-me__visible"}
@@ -50,12 +54,15 @@ function About({
               collection={collection}
               onPostClick={onPostClick}
               onAboutPopupOpen={onAboutPopupOpen}
-              isLoading={isLoading}
               isOpen={isOpen}
             />
           </span>
 
-          <button className="about__close_button" onClick={onClose} />
+          <button
+            type="button"
+            className="about__close_button"
+            onClick={onClose}
+          />
         </div>
       </div>
     </section>

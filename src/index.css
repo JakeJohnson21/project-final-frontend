@@ -7,20 +7,8 @@ h2 {
 }
 button {
   cursor: pointer;
+  transition: all 0.2s linear;
 }
-
-/* div,
-button,
-p,
-span,
-img,
-section,
-input,
-i,
-Link,
-nav {
-  border: 1px solid red;
-} */
 
 @import url(fonts/fonts.css);
 @import url(vendor/normalize.css);
@@ -37,6 +25,5 @@ nav {
 @import url(components/Search/Search.css);
 @import url(components/Home/Home.css);
 @import url(components/Carousel/Carousel.css);
-button {
-  transition: all 0.2s linear;
-}
+@import url(components/PageButton/PageButton.css);
+@import url(components/README/README.css);

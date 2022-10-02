@@ -11,6 +11,7 @@
 .nav__button_container {
   margin-left: 5%;
   transition: all 0.7s ease;
+  z-index: 3;
 }
 
 .nav__button {
@@ -21,6 +22,7 @@
   border: none;
   padding: 16px;
   transition: all 0.7s ease;
+  cursor: pointer;
 }
 .nav__button:hover {
   color: #9b9a9a;
@@ -28,10 +30,6 @@
 .nav__button-active {
   border-bottom: 3px solid rgb(151, 151, 151);
 }
-/* .nav__search {
-  display: flex;
-  align-items: flex-end;
-} */
 
 .mobile__menu_close-button {
   display: none;
@@ -78,7 +76,7 @@
     visibility: hidden;
 
     transition: transform 0.6s ease-out;
-    z-index: 3;
+    z-index: 5;
   }
   .mobile__menu_open {
     transform: translateX(0%);

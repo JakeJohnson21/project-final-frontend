@@ -5,13 +5,13 @@
   max-width: 900px;
   justify-content: space-around;
   padding-top: 0;
+  padding-bottom: 20px;
   margin: 0 20px 40px;
   transition: all 0.45s ease-in;
   z-index: 2;
+
   cursor: pointer;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrapd;
+  overflow-y: h;
 }
 .similar__post {
   display: flex;
@@ -27,9 +27,10 @@
   margin: 1px 15px;
   transition: all 0.3s ease-in;
   box-shadow: 0px 2px 35px 3px rgba(40, 40, 40, 0.5);
+  aspect-ratio: 4/6;
 }
 .similar__post:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 .similar__post:active {
   opacity: 0.6;
@@ -45,20 +46,20 @@
 }
 .similar__post > .post__title {
   position: relative;
-  bottom: -10px;
+  bottom: -15px;
   font-weight: 400;
   font-size: 16px;
   color: white;
   line-height: 0.8;
-  width: 110%;
+  width: 95%;
   text-align: left;
   overflow: hidden;
   padding-left: 0;
   padding-top: 0px;
+  padding-bottom: 30px;
   flex-direction: column-reverse;
   text-overflow: ellipsis;
   white-space: nowrap;
-
   transition: all 0.3s ease-in;
 }
 .similar__caption {
@@ -75,10 +76,6 @@
 @media screen and (max-width: 1700px) {
   .similar__post {
     margin: auto 2px;
-  }
-  .similar__container {
-  }
-  .similar__post {
     max-width: 125px;
     height: 185px;
   }
@@ -99,18 +96,34 @@
     padding: 5px 1px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .similar__post {
+    width: 110px;
+    margin: 0 5px;
+    height: 155px;
+  }
+  .similar__caption {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .similar__post > .post__title {
+    bottom: 0;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 800px) {
   .similar__caption {
     position: relative;
     text-align: center;
     margin: 50px auto 0;
-
     font-size: 24px;
     font-weight: 700;
     transition: all 0.6s ease-in;
   }
   .similar__post {
     max-width: 220px;
+    width: 30%;
     height: min-content;
     margin: 30px 20px;
     position: relative;
@@ -128,22 +141,16 @@
     margin-top: 0px;
     flex-wrap: wrap;
     justify-content: center;
-
     padding-bottom: 60px;
     transition: all 0.4s ease-in;
   }
   .similar__post > .post__title {
     position: absolute;
-    bottom: -40px;
+    bottom: -55px;
     left: 0;
     text-align: center;
     font-size: 16px;
 
     transition: all 0.4s ease-in;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .similar__container {
   }
 }

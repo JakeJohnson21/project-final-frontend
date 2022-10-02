@@ -13,6 +13,14 @@ class Api {
     }
     return res.json();
   }
+  getHalloweenTitles() {
+    return fetch(
+      `${this._baseUrl}/search/movie${this._params}&query=halloween`,
+      {
+        headers: this._headers,
+      }
+    ).then((res) => this._getResponseData(res));
+  }
 
   getNowPlaying() {
     return fetch(
@@ -30,9 +38,9 @@ class Api {
       }
     ).then((res) => this._getResponseData(res));
   }
-  getTopRated() {
+  getTopRated(page) {
     return fetch(
-      `${this._baseUrl}/movie/top_rated${this._params}${this._region}&page=2`,
+      `${this._baseUrl}/movie/top_rated${this._params}${this._region}&page=${page}`,
       {
         headers: this._headers,
       }

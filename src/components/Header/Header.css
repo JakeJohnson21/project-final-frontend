@@ -3,20 +3,11 @@
   width: 100vw;
   display: flex;
   min-height: 80px;
-  background: #e65c00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f9d423,
-    #e65c00
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f9d423,
-    #e65c00
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #e65c00;
+  background: -webkit-linear-gradient(to right, #f9d423, #e65c00);
+  background: linear-gradient(to right, #f9d423, #e65c00);
   justify-content: space-between;
-  border-bottom: 2px solid rgb(218, 218, 218);
+  box-shadow: 1px 1px 15px 3px rgb(66, 66, 66, 0.5);
   margin: 0 auto;
   z-index: 2;
 }
@@ -31,14 +22,32 @@
   width: 80%;
   transition: all 0.7s ease;
 }
-
 .header__title {
+  border: none;
+  background-color: transparent;
   font-size: 42px;
   margin: 0;
   font-weight: 700;
   color: white;
   transition: all 0.7s ease;
+  text-overflow: hidden;
 }
+.header__title:hover {
+  box-sizing: border-box;
+  border-bottom: 5px solid orangered;
+  transition: all 0.3s linear;
+}
+/* 
+@keyframes slideIn {
+  0% {
+    border-bottom: 5px solid orangered;
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+} */
+
 .header__subtitle {
   font-weight: 300;
   font-size: 18px;
@@ -51,36 +60,11 @@
   margin: 30px -40px 24px;
   transition: all 0.7s ease;
 }
-.header__button_container {
-  display: flex;
-  height: auto;
-  margin: 54px 80px 0;
-  transition: all 0.7s ease;
-}
-.header__button {
-  height: 50px;
-  justify-content: flex-end;
-  margin: auto 7px 0px;
-  font-size: 18px;
-  padding: 0 27px 16px 27px;
-  background-color: transparent;
-  border: none;
-  border-bottom: 5px solid black;
-  transition: all 0.7s ease;
-}
 .home__link {
   text-decoration: none;
   color: rgb(86, 86, 86);
 }
-.home__link:hover {
-  color: gainsboro;
-}
-.home__link:active {
-  color: rgb(156, 156, 156, 0.5);
-}
-.home__link:visited {
-  color: rgb(86, 86, 86);
-}
+
 .mobile__menu_button {
   display: none;
 }
@@ -119,7 +103,7 @@
   .header {
     overflow: hidden;
     height: 90px;
-    z-index: 5;
+    z-index: 15;
   }
   .header__text {
     margin: 0 auto;
@@ -138,7 +122,6 @@
     margin: 0 20px auto;
     align-items: center;
     width: 90%;
-    background-color: white;
   }
   .mobile__search_link {
     width: 80%;

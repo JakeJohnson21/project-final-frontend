@@ -11,6 +11,7 @@
     "motion": "^10.14.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-media": "^1.10.0",
     "react-scripts": "^5.0.1",
     "react-simple-star-rating": "^4.0.5",
     "web-vitals": "^2.1.4"

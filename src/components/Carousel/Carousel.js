@@ -19,15 +19,6 @@ function Carousel({
   function slide(shift) {
     innerCarousel.current.scrollLeft += shift;
     setScrollX(scrollX + shift);
-    if (
-      Math.floor(
-        (innerCarousel.current.scrollWidth = innerCarousel.current.scrollLeft)
-      ) <= innerCarousel.current.offsetWidth
-    ) {
-      setScrollEnd(true);
-    } else {
-      setScrollEnd(false);
-    }
   }
 
   function handleScrolling() {
@@ -71,6 +62,7 @@ function Carousel({
     <div className={`outer-carousel ${carouselStyle}`}>
       {scrollX !== 0 && (
         <button
+          type="button"
           ref={leftArrow}
           onClick={leftScroll}
           className="scroll-left"
@@ -91,13 +83,15 @@ function Carousel({
             isLoading={isLoading}
             isOpen={isOpen}
             postStyle={"homepage__post"}
-            setStyle=""
+            ratingStyle={"carousel__rating"}
             starColor={"gold"}
+            starSize={19}
           />
         ))}
       </div>
       {!scrollEnd && (
         <button
+          type="button"
           ref={rightArrow}
           onClick={rightScroll}
           className="scroll-right"

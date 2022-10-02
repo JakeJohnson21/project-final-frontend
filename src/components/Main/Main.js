@@ -1,19 +1,23 @@
 import React from "react";
+import PageButton from "../PageButton/PageButton";
 import Post from "../Post/Post";
-import Preloader from "../Preloader/Preloader";
 
 function Main({
   collection,
   onAboutPopupClick,
   onPostClick,
   isOpen,
-  isLoading,
   pageTitle,
+  pageButtonStyle,
+  setTopRatedPage,
+  mainContentStyles,
+  starSize = 20,
 }) {
   return (
-    <main className="content">
+    // Main Content container
+    <main className={`content ${mainContentStyles}`}>
       <h1 className="page__title">{pageTitle}</h1>
-      <Preloader isLoading={isLoading} />
+
       <section className="post__container">
         {collection.map((post) => (
           <Post
@@ -22,13 +26,17 @@ function Main({
             post={post}
             onAboutPopupClick={onAboutPopupClick}
             isOpen={isOpen}
-            isLoading={isLoading}
             setStyle={"rating__container"}
             postStyle={"post"}
             ratingStyle={"post__rating"}
+            starSize={starSize}
           />
         ))}
       </section>
+      <PageButton
+        setTopRatedPage={setTopRatedPage}
+        pageButtonStyle={pageButtonStyle}
+      />
     </main>
   );
 }

@@ -2,7 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 
-function Header({ search, setSearch, isOpen, handleOpen, onClose }) {
+function Header({
+  search,
+  setSearch,
+  isOpen,
+  handleOpen,
+  onClose,
+  handleIsHomepageActive,
+  isReadmeActive,
+}) {
+  const readmeHeading = `${
+    isReadmeActive ? "readme__header" : "readme__hidden"
+  }`;
   const mobileMenuIcon = `${
     isOpen ? "mobile__menu_closed-button" : "mobile__menu_open-button"
   }`;
@@ -12,7 +23,9 @@ function Header({ search, setSearch, isOpen, handleOpen, onClose }) {
       <div className="header__content">
         <div className="header__text">
           <Link to="/home" className="home__link">
-            <p className="header__title">RMDb</p>
+            <button className="header__title" onClick={handleIsHomepageActive}>
+              RMDb
+            </button>
           </Link>
 
           {/* <p className="header__subtitle">React Movie Database</p> */}

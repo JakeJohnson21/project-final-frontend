@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Carousel from "../Carousel/Carousel";
 import { Link } from "react-router-dom";
 

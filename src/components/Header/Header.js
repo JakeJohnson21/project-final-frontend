@@ -9,11 +9,7 @@ function Header({
   handleOpen,
   onClose,
   handleIsHomepageActive,
-  isReadmeActive,
 }) {
-  const readmeHeading = `${
-    isReadmeActive ? "readme__header" : "readme__hidden"
-  }`;
   const mobileMenuIcon = `${
     isOpen ? "mobile__menu_closed-button" : "mobile__menu_open-button"
   }`;
@@ -27,8 +23,6 @@ function Header({
               RMDb
             </button>
           </Link>
-
-          {/* <p className="header__subtitle">React Movie Database</p> */}
         </div>
         <Link className="mobile__search_link" to="/search" onClick={onClose}>
           <Search

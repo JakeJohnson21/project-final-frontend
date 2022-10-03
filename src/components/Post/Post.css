@@ -99,38 +99,6 @@
     width: 125px;
   }
 }
-/* @media screen and (max-width: 580px) {
-  .post__container > .post {
-    flex-direction: row;
-    max-width: 100%;
-    width: 600px;
-    padding: 0;
-    margin: 4px;
-    height: 90px;
-    border-radius: 12px;
-  }
-  .post > .post__poster {
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    height: 80px;
-    border-radius: 5px;
-  }
-  .post > .post__title {
-    position: absolute;
-    text-align: left;
-    font-weight: 700;
-    font-size: 16px;
-    left: 60px;
-    bottom: 30px;
-  }
-  .post > .post__rating {
-    margin-top: 60px;
-    position: absolute;
-    left: 65px;
-    bottom: 5px;
-  }
-} */
 
 @keyframes bulge {
   0% {

@@ -32,21 +32,11 @@
   transition: all 0.7s ease;
   text-overflow: hidden;
 }
+
 .header__title:hover {
-  box-sizing: border-box;
-  border-bottom: 5px solid orangered;
+  transform: scale(0.9);
   transition: all 0.3s linear;
 }
-/* 
-@keyframes slideIn {
-  0% {
-    border-bottom: 5px solid orangered;
-    transform: translateX(-150px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-} */
 
 .header__subtitle {
   font-weight: 300;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 
@@ -12,30 +12,9 @@ function Nav({
   handleComingSoon,
   handleTopRated,
   handleNowPlaying,
+  isReadmeActive,
+  handleReadMe,
 }) {
-  // const [isComingSoonActive, setIsComingSoonActive] = useState(false);
-  // const [isNowPlayingActive, setIsNowPlayingActive] = useState(false);
-  // const [isTopRatedActive, setIsTopRatedActive] = useState(false);
-
-  // function handleIsComingSoonActive() {
-  //   onClose();
-  //   setIsComingSoonActive(true);
-  //   setIsNowPlayingActive(false);
-  //   setIsTopRatedActive(false);
-  // }
-  // function handleIsNowPlayingActive() {
-  //   onClose();
-  //   setIsNowPlayingActive(true);
-  //   setIsTopRatedActive(false);
-  //   setIsComingSoonActive(false);
-  // }
-
-  // function handleIsTopRatedActive() {
-  //   onClose();
-  //   setIsTopRatedActive(true);
-  //   setIsComingSoonActive(false);
-  //   setIsNowPlayingActive(false);
-  // }
   const mobileMenuClassName = `nav ${isOpen ? "mobile__menu_open" : ""}`;
 
   return (
@@ -71,7 +50,18 @@ function Nav({
             Top Rated
           </button>
         </Link>
+        <Link className="nav__link readme__link" to="/readme">
+          <button
+            className={`nav__button ${
+              isReadmeActive ? "nav__button-active" : "nav__button-inactive"
+            }`}
+            onClick={handleReadMe}
+          >
+            README
+          </button>
+        </Link>
       </div>
+
       <Link className="nav__search" to="/search">
         <Search
           search={search}

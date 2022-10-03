@@ -8,19 +8,13 @@ function Post({
   ratingStyle,
   starColor,
   starSize,
-  postRef,
 }) {
   function handlePostClick() {
     onPostClick(post);
   }
 
   return (
-    <div
-      className={postStyle}
-      ref={postRef}
-      key={post}
-      onClick={handlePostClick}
-    >
+    <div className={postStyle} key={post} onClick={handlePostClick}>
       <h2 className="post__title">{post.title}</h2>
 
       <img

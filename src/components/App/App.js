@@ -42,6 +42,7 @@ function App() {
   const [isNowPlayingActive, setIsNowPlayingActive] = useState(false);
   const [isTopRatedActive, setIsTopRatedActive] = useState(false);
 
+  // Open README, else close.
   function handleIsReadmeActive() {
     handleCloseMobileMenu();
     setIsReadmeActive(true);
@@ -257,6 +258,8 @@ function App() {
         handleNowPlaying={handleIsNowPlayingActive}
         handleComingSoon={handleIsComingSoonActive}
         handleTopRated={handleIsTopRatedActive}
+        isReadmeActive={isReadmeActive}
+        handleReadMe={handleIsReadmeActive}
       />
       <Redirect path="/" to="/home" />
       <Switch>

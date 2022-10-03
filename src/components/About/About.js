@@ -31,32 +31,30 @@ function About({
             }`}
             alt={movieData ? `A movie titled ${movieData.title}` : ""}
           />
-
-          <div className="about__heading">
-            <h2 className="about__title">{movieData.title}</h2>
-            <p className="about__subtitle">{movieData.tagline}</p>
-            <p className="about__runtime">{runtime}</p>
-            <FiveStarRating
-              ratingAverage={movieData.vote_average / 2}
-              rateMeText={"rate-me__visible"}
-              setStyle={"about__rating"}
-              starSize="28px"
-            />
+          <div className="about__text">
+            <div className="about__heading">
+              <h2 className="about__title">{movieData.title}</h2>
+              <p className="about__subtitle">{movieData.tagline}</p>
+              <p className="about__runtime">{runtime}</p>
+              <FiveStarRating
+                ratingAverage={movieData.vote_average / 2}
+                rateMeText={"rate-me__visible"}
+                setStyle={"about__rating"}
+                starSize="28px"
+              />
+            </div>
+            <div className="about__body">
+              <p className="about__genres">{genres}</p>
+              <p className="about__release">{`Released Date: ${movieData.release_date}`}</p>
+              <p className="about__overview">{movieData.overview}</p>
+            </div>
           </div>
-          <div className="about__body">
-            <p className="about__genres">{genres}</p>
-            <p className="about__release">{`Released Date: ${movieData.release_date}`}</p>
-            <p className="about__overview">{movieData.overview}</p>
-          </div>
-          <span className="about__bottom-background">
-            <p className="similar__caption">Similar results</p>
-            <Similar
-              collection={collection}
-              onPostClick={onPostClick}
-              onAboutPopupOpen={onAboutPopupOpen}
-              isOpen={isOpen}
-            />
-          </span>
+          <Similar
+            collection={collection}
+            onPostClick={onPostClick}
+            onAboutPopupOpen={onAboutPopupOpen}
+            isOpen={isOpen}
+          />
 
           <button
             type="button"

@@ -13,10 +13,10 @@ button:target {
   overflow: hidden;
   overflow-x: scroll;
   width: auto;
-  height: 320px;
+  height: 3900px;
   white-space: unset;
   scroll-behavior: smooth;
-  bottom: 110px;
+  bottom: 90px;
   padding-top: 100px;
   padding-bottom: 100px;
   z-index: 1;

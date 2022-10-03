@@ -24,6 +24,11 @@
   transition: all 0.7s ease;
   cursor: pointer;
 }
+.readme__link {
+  position: relative;
+  text-decoration: none;
+  left: 20px;
+}
 .nav__button:hover {
   color: #9b9a9a;
 }
@@ -50,8 +55,11 @@
   .nav__button {
     font-size: 16px;
   }
+  .nav {
+    width: 95%;
+  }
   .nav__button_container {
-    margin-left: 3%;
+    margin-left: 0%;
   }
 }
 @media screen and (max-width: 800px) {
@@ -67,16 +75,16 @@
     border-radius: 0px;
     margin: 0px;
     align-items: center;
-    padding-top: 170px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 170px 5% 0;
     transform: translateX(-100%);
     background-color: rgb(109, 109, 109);
     opacity: 0.95;
     visibility: hidden;
-
     transition: transform 0.6s ease-out;
     z-index: 5;
+  }
+  .readme__link {
+    left: 0;
   }
   .mobile__menu_open {
     transform: translateX(0%);
@@ -90,12 +98,10 @@
     width: 95%;
     height: 45%;
     flex-direction: column;
-
     z-index: 5;
   }
   .nav__button {
     border-bottom: 5px solid aliceblue;
-
     margin: 15px;
     font-size: 32px;
     color: aliceblue;

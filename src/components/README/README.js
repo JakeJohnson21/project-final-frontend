@@ -22,7 +22,7 @@ function README() {
           lead you to discovering something you've never heard of.
         </p>
         <p className="readme__paragraph">
-          List of technologies: <br></br>
+          List of technologies used include: <br></br>
           -React <br></br>
           -NPM <br></br>
           -CSS <br></br>

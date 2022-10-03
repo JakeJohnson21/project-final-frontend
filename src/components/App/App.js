@@ -1,6 +1,6 @@
 import "../../index.css";
 import React, { useEffect, useState } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 
 import Header from "../Header/Header";
 import Home from "../Home/Home";
@@ -190,10 +190,12 @@ function App() {
   // If the same post is opened and reopened, the load doesn't change.
   useEffect(() => {
     handleAboutMovieData(movieId);
+    // eslint-disable-next-line
   }, [selectedPost]);
 
   useEffect(() => {
     handleSimilarMovies(movieId);
+    // eslint-disable-next-line
   }, [selectedPost]);
 
   // Passes in the page number to recieve specific page data

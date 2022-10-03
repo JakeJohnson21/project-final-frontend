@@ -12,6 +12,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-media": "^1.10.0",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
     "react-simple-star-rating": "^4.0.5",
     "web-vitals": "^2.1.4"
@@ -22,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d build"
+    "deploy": "npm run build && ghm-pages -d build"
   },
   "eslintConfig": {
     "extends": [

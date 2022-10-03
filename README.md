@@ -30,3 +30,7 @@ devices. The page effortlessly resizes with smooth transitions.
 
 option. There are now 10 pages worth of top rated movies. I chose to
 go in my own direction with the UI.
+
+Netlify: https://gh-pages--lambent-arithmetic-d64d50.netlify.app/home
+
+GitHub Pages: https://jakejohnson21.github.io/project-final-frontend/

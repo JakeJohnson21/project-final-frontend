@@ -1,0 +1,41 @@
+.preloader {
+  width: 100vw;
+  background-color: rgb(17, 17, 17, 0.3);
+  height: 100vh;
+  z-index: 10;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  transition: all 0.4s ease;
+}
+.preloader__hidden {
+  opacity: 1;
+  transition: all 0.4s ease-out;
+}
+.preloader__visible {
+  display: block;
+  opacity: 1;
+  width: 90px;
+  height: 90px;
+  border: 20px solid rgb(0, 0, 0);
+  border-bottom-color: rgb(216, 216, 216);
+  border-radius: 50%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

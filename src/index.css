@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+button {
+  cursor: pointer;
+  transition: all 0.2s linear;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(fonts/fonts.css);
+@import url(vendor/normalize.css);
+@import url(components/About/About.css);
+@import url(components/App/App.css);
+@import url(components/Footer/Footer.css);
+@import url(components/Header/Header.css);
+@import url(components/Main/Main.css);
+@import url(components/Nav/Nav.css);
+@import url(components/Preloader/Preloader.css);
+@import url(components/Post/Post.css);
+@import url(components/Rating/FiveStarRating.css);
+@import url(components/Similar/Similar.css);
+@import url(components/Search/Search.css);
+@import url(components/Home/Home.css);
+@import url(components/Carousel/Carousel.css);
+@import url(components/PageButton/PageButton.css);
+@import url(components/README/README.css);

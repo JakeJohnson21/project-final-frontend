@@ -1,0 +1,197 @@
+.header {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  min-height: 80px;
+  background: #e65c00;
+  background: -webkit-linear-gradient(to right, #f9d423, #e65c00);
+  background: linear-gradient(to right, #f9d423, #e65c00);
+  justify-content: space-between;
+  box-shadow: 1px 1px 15px 3px rgb(66, 66, 66, 0.5);
+  margin: 0 auto;
+  z-index: 2;
+}
+.mobile__search_container {
+  display: none;
+}
+.header__content {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1600px;
+  width: 80%;
+  transition: all 0.7s ease;
+}
+.header__title {
+  border: none;
+  background-color: transparent;
+  font-size: 42px;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+  transition: all 0.7s ease;
+  text-overflow: hidden;
+}
+
+.header__title:hover {
+  transform: scale(0.9);
+  transition: all 0.3s linear;
+}
+
+.header__subtitle {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 4px auto 0 auto;
+  transition: all 0.7s ease;
+}
+.header__text {
+  display: flex;
+  flex-direction: column;
+  margin: 30px -40px 24px;
+  transition: all 0.7s ease;
+}
+.home__link {
+  text-decoration: none;
+  color: rgb(86, 86, 86);
+}
+
+.mobile__menu_button {
+  display: none;
+}
+.mobile__menu_closed-button {
+  display: none;
+}
+.mobile__menu_open-button {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .mobile__menu_open-button {
+    display: block;
+    position: relative;
+    margin: auto auto auto 25px;
+    background-size: cover;
+    background-image: url(../../images/mobileMenu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    transition: all 0.2s linear 0.6s;
+  }
+
+  .mobile__menu_closed-button {
+    display: block;
+    position: relative;
+    margin: auto auto auto 25px;
+    background-image: url(../../images/blackMobileX.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    transition: all 0.2s linear 0.6s;
+  }
+  .header {
+    overflow: hidden;
+    height: 90px;
+    z-index: 15;
+  }
+  .header__text {
+    margin: 0 auto;
+  }
+  .header__content {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+  .mobile__search_container {
+    max-width: unset;
+    position: relative;
+    display: inline-block;
+    margin: 0 20px auto;
+    align-items: center;
+    width: 90%;
+  }
+  .mobile__search_link {
+    width: 80%;
+    right: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    height: 84px;
+  }
+  .header__title {
+    font-size: 20px;
+    text-align: left;
+    margin: 0 10px 0 20px;
+  }
+  .header__text {
+    margin: 0;
+    margin-bottom: 6px;
+  }
+
+  .mobile__search_container {
+    margin: 0 10px 0 10px;
+    width: 100%;
+  }
+  .mobile__search_container > .search__input {
+    font-size: 12px;
+    padding-right: 50px;
+  }
+  .header__content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    width: 85%;
+    margin-right: 0px;
+  }
+  .mobile__search_container > .search__icon {
+    top: 6px;
+    right: 2px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .header {
+    height: 90px;
+  }
+  .mobile__menu_open-button {
+    display: block;
+    position: relative;
+    margin: auto auto auto 14px;
+    background-size: cover;
+    background-image: url(../../images/mobileMenu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    transition: all 0.2s linear 0.6s;
+  }
+
+  .mobile__menu_closed-button {
+    display: block;
+    position: relative;
+    margin: auto auto auto 15px;
+    background-image: url(../../images/blackMobileX.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 45px;
+    height: 45px;
+    transition: all 0.2s linear 0.6s;
+  }
+  .mobile__search_container {
+    width: 95%;
+  }
+  .header__content {
+    margin-left: 0;
+  }
+  .mobile__search_container > .search__input {
+    width: 90%;
+    padding-right: 38px;
+  }
+  .mobile__search_container > .search__icon {
+    right: -30px;
+  }
+}

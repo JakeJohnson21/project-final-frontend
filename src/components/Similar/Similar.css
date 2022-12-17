@@ -1,0 +1,202 @@
+.similar__container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  max-width: 900px;
+  justify-content: space-around;
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin: 0 20px 40px;
+  transition: all 0.45s ease-in;
+  z-index: 2;
+  cursor: pointer;
+}
+.similar__post {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  max-width: 135px;
+  align-items: center;
+  height: 200px;
+  grid-area: 3 / 2 / 4 / 3;
+  padding: 5px 1px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 1px 15px;
+  transition: all 0.3s ease-in;
+  box-shadow: 0px 2px 35px 3px rgba(40, 40, 40, 0.5);
+  aspect-ratio: 4/6;
+}
+.similar__post:hover {
+  transform: scale(1.15);
+}
+.similar__post:active {
+  opacity: 0.6;
+  transition: 0.2 ease-in-out;
+}
+.similar__post > .post__poster {
+  border-radius: 15px;
+}
+.hide-rating {
+  display: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+.similar__post > .post__title {
+  position: relative;
+  bottom: -15px;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  line-height: 0.8;
+  width: 95%;
+  text-align: left;
+  overflow: hidden;
+  padding-left: 0;
+  padding-top: 0px;
+  padding-bottom: 30px;
+  flex-direction: column-reverse;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease-in;
+}
+.about__bottom-background {
+  position: relative;
+  bottom: -40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  background-color: rgb(89, 89, 89);
+  height: 300px;
+  box-shadow: 0px 2px 20px 3px rgba(43, 43, 43, 0.5) inset;
+  transition: all 0.45s ease-in;
+}
+.similar__caption {
+  text-align: left;
+  margin-left: 80px;
+  width: 200px;
+  color: #ffffff;
+  position: relative;
+  font-weight: 700;
+  font-size: 24px;
+  text-shadow: 1px 4px 10px rgba(65, 65, 65, 0.5);
+  transition: all 0.6s ease-in;
+}
+@media screen and (max-width: 1700px) {
+  .similar__post {
+    margin: auto 2px;
+    max-width: 125px;
+    height: 185px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .similar__caption {
+    transition: all 0.6s ease-in;
+  }
+  .similar__container {
+    margin-bottom: 50px;
+    max-width: 1000px;
+    justify-content: space-between;
+    transition: all 0.4s ease-in;
+    height: 250px;
+  }
+  .about__bottom-background {
+    grid-area: 3/1/4/3;
+    position: absolute;
+    bottom: 20px;
+
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .similar__post {
+    margin: 0 10px;
+    padding: 5px 1px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .similar__post {
+    width: 110px;
+    margin: 0 5px;
+    height: 155px;
+  }
+  .similar__caption {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .similar__post > .post__title {
+    bottom: 0;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  .about__bottom-background {
+    box-shadow: 0px 2px 10px 3px rgb(79, 79, 79, 0.7) inset;
+    height: 270px;
+    transition: all 0.6s ease-in;
+  }
+}
+@media screen and (max-width: 800px) {
+  .about__bottom-background {
+    grid-row: 4/5;
+    position: relative;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    background-color: rgb(40, 40, 40);
+    height: auto;
+    border-radius: 0;
+
+    width: 100vw;
+    transition: all 0.4s ease-in;
+    box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.5) inset;
+  }
+  .similar__caption {
+    position: relative;
+    text-align: center;
+    margin: 50px auto 0;
+    font-size: 24px;
+    font-weight: 700;
+    transition: all 0.6s ease-in;
+  }
+  .similar__post {
+    max-width: 220px;
+    width: 30%;
+    height: min-content;
+    margin: 30px 20px;
+    position: relative;
+    top: 30px;
+    padding: 7px 2px 0;
+    border-radius: 18px;
+    background-color: rgb(237, 237, 237);
+    transition: all 0.6s ease-in;
+  }
+  .similar__container {
+    height: fit-content;
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 4/5;
+    flex-direction: row;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 60px;
+    transition: all 0.4s ease-in;
+  }
+  .similar__post > .post__title {
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+
+    transition: all 0.4s ease-in;
+  }
+}

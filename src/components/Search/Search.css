@@ -1,0 +1,136 @@
+.search__container {
+  position: relative;
+  display: inline-block;
+  margin-right: 80px;
+  font-size: 18px;
+}
+
+.search__input {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: 25px;
+  width: 220px;
+  font-weight: 18px;
+  padding: 8px 64px 12px 20px;
+  border: none;
+  color: rgb(104, 104, 104, 0.6);
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all 0.7s ease;
+}
+.search__input::placeholder {
+  font-weight: 300;
+  color: #575757;
+  transition: all 0.3s ease;
+}
+.search__input:hover::placeholder {
+  color: #9b9a9a;
+}
+
+.search__input:focus {
+  outline: none;
+  box-sizing: content-box;
+  color: rgb(104, 104, 104, 1);
+  transition: all 0.3s ease;
+}
+.search__icon {
+  background-image: url("../../images/Search.svg");
+  opacity: 0.5;
+  margin-left: 4px;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 20px;
+  top: 6px;
+  transition: all 0.7s ease;
+}
+.search__input:focus + .search__icon {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1300px) {
+  .search {
+    margin-right: 30px;
+    transition: all 0.7s ease;
+  }
+  .search__container {
+    margin-right: 0px;
+  }
+  .search__input {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .nav {
+    max-width: 94%;
+    transition: all 0.7s ease;
+  }
+  .search {
+    font-size: 16px;
+    transition: all 0.7s ease;
+  }
+}
+@media screen and (max-width: 800px) {
+  .search__container {
+    display: none;
+  }
+
+  .search__input {
+    font-size: 22px;
+    padding: 10px 60px 10px 5%;
+    max-width: unset;
+    font-weight: 400;
+    transform: unset;
+    box-shadow: inset 0px 1px 2px 1px rgb(40, 40, 40, 0.35);
+    border-radius: 40px;
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+  }
+  .search__input:focus {
+    transform: unset;
+  }
+
+  .search__input:focus {
+    border-bottom: none;
+    text-decoration: none;
+  }
+
+  .search__icon {
+    top: 10px;
+    right: 0;
+    margin-right: 5%;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .search__container {
+    height: 68px;
+  }
+  .search__input {
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .search__icon {
+    top: 8px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .search_input {
+    max-width: 50px;
+    padding: 9;
+  }
+}

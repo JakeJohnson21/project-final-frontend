@@ -1,0 +1,59 @@
+.readme__container {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 80%;
+  padding: 80px;
+}
+.readme__subtitle {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  font-weight: 700;
+}
+.readme__title {
+  text-align: center;
+  font-size: 76px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-bottom: 0;
+  font-weight: 200;
+}
+.readme__paragraph {
+  font-size: 22px;
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 40px auto;
+}
+@media screen and (max-width: 800px) {
+  .readme__title {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  .readme__container {
+    max-width: 700px;
+    width: 70%;
+  }
+  .readme__subtitle {
+    margin-bottom: 60px;
+  }
+  .readme__paragraph {
+    font-size: 18px;
+    margin: 30px auto;
+  }
+}
+@media screen and (max-width: 580px) {
+  .readme__container {
+    width: auto;
+    padding: 40px 50px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .readme__paragraph {
+    font-size: 16px;
+  }
+  .readme__container {
+    margin: 0;
+    padding: 30px;
+  }
+}

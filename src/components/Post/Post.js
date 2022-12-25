@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import FiveStarRating from "../Rating/FiveStarRating";
 
-function Post({
-  post,
-  onPostClick,
-  postStyle,
-  ratingStyle,
-  starColor,
-  starSize,
-}) {
+function Post({ post, onPostClick, postStyle, ratingStyle, starColor }) {
+  const [starSize, setStarSize] = useState(25);
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+  });
+
   function handlePostClick() {
     onPostClick(post);
   }
+
+  useEffect(() => {
+    function handleStarSize() {
+      if (dimensions.width <= 600) {
+        setStarSize(11);
+      } else if (dimensions.width <= 800) {
+        setStarSize(17);
+      } else if (dimensions.width <= 1000) {
+        setStarSize(20);
+      } else if (dimensions.width > 1000) {
+        setStarSize(25);
+      }
+    }
+    window.addEventListener("resize", handleStarSize);
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        width: window.innerWidth,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+  });
 
   return (
     <div className={postStyle} key={post} onClick={handlePostClick}>
@@ -33,4 +56,4 @@ function Post({
     </div>
   );
 }
-export default Post;
+export default React.memo(Post);

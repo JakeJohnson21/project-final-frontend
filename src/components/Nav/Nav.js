@@ -72,4 +72,4 @@ function Nav({
     </section>
   );
 }
-export default Nav;
+export default React.memo(Nav);

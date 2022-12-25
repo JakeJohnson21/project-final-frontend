@@ -188,20 +188,13 @@ function App() {
 
   // Loads the extended info popup each time a post is selected
   // If the same post is opened and reopened, the load doesn't change.
-  useEffect(() => {
-    handleAboutMovieData(movieId);
-    // eslint-disable-next-line
-  }, [selectedPost]);
 
   useEffect(() => {
     handleSimilarMovies(movieId);
+    handleAboutMovieData(movieId);
+    handleTopRated(topRatedPage);
     // eslint-disable-next-line
   }, [selectedPost]);
-
-  // Passes in the page number to recieve specific page data
-  useEffect(() => {
-    handleTopRated(topRatedPage);
-  }, [topRatedPage]);
 
   // Click on esc key, closes the popup.
   useEffect(() => {
@@ -287,7 +280,6 @@ function App() {
             isOpen={isAboutPopupOpen}
             pageButtonStyle="directory__container-hidden"
             mainContentStyles="limited__halloween-page"
-            starSize={20}
             ratingStyle={"post__rating"}
           />
         </Route>

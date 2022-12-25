@@ -1,11 +1,28 @@
+.about__bottom-background {
+  position: relative;
+  width: 100%;
+  display: flex;
+  max-height: 300px;
+  grid-area: sim;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  background-color: rgb(89, 89, 89);
+  box-shadow: 0px 2px 20px 3px #2b2b2b80 inset;
+  transition: all 0.45s ease-in;
+}
 .similar__container {
   display: flex;
   flex-direction: row;
   position: relative;
   max-width: 900px;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 95%;
   padding-top: 0;
-  padding-bottom: 20px;
   margin: 0 20px 40px;
   transition: all 0.45s ease-in;
   z-index: 2;
@@ -18,7 +35,6 @@
   max-width: 135px;
   align-items: center;
   height: 200px;
-  grid-area: 3 / 2 / 4 / 3;
   padding: 5px 1px;
   background-color: white;
   border-radius: 15px;
@@ -60,29 +76,13 @@
   white-space: nowrap;
   transition: all 0.3s ease-in;
 }
-.about__bottom-background {
-  position: relative;
-  bottom: -40px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 36px;
-  border-bottom-right-radius: 36px;
-  background-color: rgb(89, 89, 89);
-  height: 300px;
-  box-shadow: 0px 2px 20px 3px rgba(43, 43, 43, 0.5) inset;
-  transition: all 0.45s ease-in;
-}
+
 .similar__caption {
   text-align: left;
   margin-left: 80px;
   width: 200px;
   color: #ffffff;
   position: relative;
-  font-weight: 700;
   font-size: 24px;
   text-shadow: 1px 4px 10px rgba(65, 65, 65, 0.5);
   transition: all 0.6s ease-in;
@@ -95,6 +95,13 @@
   }
 }
 @media screen and (max-width: 1500px) {
+  .about__bottom-background {
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 0;
+  }
   .similar__caption {
     transition: all 0.6s ease-in;
   }
@@ -105,18 +112,6 @@
     transition: all 0.4s ease-in;
     height: 250px;
   }
-  .about__bottom-background {
-    grid-area: 3/1/4/3;
-    position: absolute;
-    bottom: 20px;
-
-    width: 100%;
-    left: 0px;
-    right: 0px;
-    padding: 0;
-    margin: 0;
-  }
-
   .similar__post {
     margin: 0 10px;
     padding: 5px 1px;
@@ -145,18 +140,26 @@
 }
 @media screen and (max-width: 800px) {
   .about__bottom-background {
-    grid-row: 4/5;
-    position: relative;
-    bottom: -40px;
-    left: 0;
-    right: 0;
+    padding-bottom: 5px;
     background-color: rgb(40, 40, 40);
-    height: auto;
     border-radius: 0;
+    max-height: unset;
+    height: auto;
 
-    width: 100vw;
     transition: all 0.4s ease-in;
     box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.5) inset;
+  }
+  .similar__container {
+    position: relative;
+    flex-flow: row wrap;
+    /* margin-top: 0px; */
+    width: 90%;
+    height: fit-content;
+    /* margin: auto; */
+    align-items: center;
+    justify-content: center;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s ease-in;
   }
   .similar__caption {
     position: relative;
@@ -167,8 +170,8 @@
     transition: all 0.6s ease-in;
   }
   .similar__post {
-    max-width: 220px;
-    width: 30%;
+    max-width: unset;
+    width: 25vw;
     height: min-content;
     margin: 30px 20px;
     position: relative;
@@ -178,18 +181,7 @@
     background-color: rgb(237, 237, 237);
     transition: all 0.6s ease-in;
   }
-  .similar__container {
-    height: fit-content;
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 4/5;
-    flex-direction: row;
-    margin-top: 0px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 60px;
-    transition: all 0.4s ease-in;
-  }
+
   .similar__post > .post__title {
     position: absolute;
     bottom: -55px;

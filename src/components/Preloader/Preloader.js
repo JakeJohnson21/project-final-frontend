@@ -10,4 +10,4 @@ function Preloader({ isLoading }) {
     </span>
   );
 }
-export default Preloader;
+export default React.memo(Preloader);

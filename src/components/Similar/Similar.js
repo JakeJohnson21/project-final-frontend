@@ -28,4 +28,4 @@ function Similar({
     </div>
   );
 }
-export default Similar;
+export default React.memo(Similar);

@@ -14,12 +14,9 @@ class Api {
     return res.json();
   }
   getHalloweenTitles() {
-    return fetch(
-      `${this._baseUrl}/search/movie${this._params}&query=halloween`,
-      {
-        headers: this._headers,
-      }
-    ).then((res) => this._getResponseData(res));
+    return fetch(`${this._baseUrl}/search/movie${this._params}&query=holiday`, {
+      headers: this._headers,
+    }).then((res) => this._getResponseData(res));
   }
 
   getNowPlaying() {

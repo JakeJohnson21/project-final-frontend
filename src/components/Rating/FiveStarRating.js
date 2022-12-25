@@ -20,4 +20,4 @@ function FiveStarRating({
     </div>
   );
 }
-export default FiveStarRating;
+export default React.memo(FiveStarRating);

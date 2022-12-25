@@ -16,7 +16,7 @@ function Home({
     <main className="homepage">
       <section className="homepage__section homepage__halloween">
         <Link to="/halloween" className="homepage__link">
-          <h2 className="section__title">Halloween is back</h2>
+          <h2 className="section__title">This Holiday Season</h2>
         </Link>
         <Carousel
           collection={halloween}
@@ -30,7 +30,9 @@ function Home({
 
       <section className="homepage__section homepage__now-playing">
         <Link to="/now-playing" className="homepage__link">
-          <h2 className="section__title">Now playing movies</h2>
+          <h2 className="section__title" style={{ color: "black" }}>
+            Now playing movies
+          </h2>
         </Link>
 
         <Carousel
@@ -44,7 +46,9 @@ function Home({
       </section>
       <section className="homepage__section homepage__coming-soon">
         <Link to="/coming-soon" className="homepage__link">
-          <h2 className="section__title">Upcoming from hollywood</h2>
+          <h2 className="section__title" style={{ color: "black" }}>
+            Upcoming from hollywood
+          </h2>
         </Link>
 
         <Carousel
@@ -73,4 +77,4 @@ function Home({
   );
 }
 
-export default Home;
+export default React.memo(Home);

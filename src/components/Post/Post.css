@@ -1,14 +1,13 @@
 .post {
   position: relative;
   max-width: 350px;
-  margin: 15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   box-sizing: border-box;
-  box-shadow: 1px 5px 20px 1px rgba(148, 148, 148, 0.2);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.7s ease;
@@ -16,9 +15,15 @@
 .post:hover {
   transform: scale(1.06);
 }
-.post:active {
-  box-shadow: 4px 8px 20px 5px rgba(148, 148, 148, 0.5);
+.post:hover .post__poster {
+  box-shadow: 1px 5px 20px 5px rgba(116, 116, 116, 0.7);
+}
+.post:active .post__poster {
+  box-shadow: 4px 8px 15px 5px rgba(148, 148, 148, 0.8);
   animation: bulge 0.5s ease-in;
+}
+.post:active {
+  padding: 30px;
 }
 
 .post__title {
@@ -31,6 +36,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-shadow: 1px 2px 3px rgb(138, 138, 138, 0.4);
+  z-index: inherit;
 }
 
 .post__poster {
@@ -39,6 +46,7 @@
   aspect-ratio: 4/6;
   margin: 0 auto 12px;
   transition: all 0.7s ease;
+  box-shadow: 1px 5px 20px 3px rgba(163, 163, 163, 0.5);
 }
 
 .post__overview {
@@ -84,19 +92,19 @@
 }
 @media screen and (max-width: 600px) {
   .post__container > .post {
-    width: 150px;
+    width: 170px;
     margin: 5px;
     height: fit-content;
   }
   .post__rating {
     max-width: 80%;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 450px) {
   .post__container > .post {
-    width: 125px;
+    width: 135px;
   }
 }
 

@@ -22,48 +22,49 @@ function About({
   return (
     <section className={popupToggle}>
       <div className="about__border" onClick={onClose}></div>
-      <div className="about__container">
-        <div className="about__content">
-          <img
-            className="about__poster"
-            src={`https://image.tmdb.org/t/p/original/${
-              movieData ? movieData.poster_path : ""
-            }`}
-            alt={movieData ? `A movie titled ${movieData.title}` : ""}
-          />
-          <div className="about__text">
-            <div className="about__heading">
-              <h2 className="about__title">{movieData.title}</h2>
-              <p className="about__subtitle">{movieData.tagline}</p>
-              <p className="about__runtime">{runtime}</p>
-              <FiveStarRating
-                ratingAverage={movieData.vote_average / 2}
-                rateMeText={"rate-me__visible"}
-                setStyle={"about__rating"}
-                starSize="28px"
-              />
+      <div className="about__btn-border">
+        <div className="about__container">
+          <div className="about__content">
+            <img
+              className="about__poster"
+              src={`https://image.tmdb.org/t/p/original/${
+                movieData ? movieData.poster_path : ""
+              }`}
+              alt={movieData ? `A movie titled ${movieData.title}` : ""}
+            />
+            <div className="about__text">
+              <div className="about__heading">
+                <h2 className="about__title">{movieData.title}</h2>
+                <p className="about__subtitle">{movieData.tagline}</p>
+                <p className="about__runtime">{runtime}</p>
+                <FiveStarRating
+                  ratingAverage={movieData.vote_average / 2}
+                  rateMeText={"rate-me__visible"}
+                  setStyle={"about__rating"}
+                  starSize="28px"
+                />
+              </div>
+              <div className="about__body">
+                <p className="about__genres">{genres}</p>
+                <p className="about__release">{`Released Date: ${movieData.release_date}`}</p>
+                <p className="about__overview">{movieData.overview}</p>
+              </div>
             </div>
-            <div className="about__body">
-              <p className="about__genres">{genres}</p>
-              <p className="about__release">{`Released Date: ${movieData.release_date}`}</p>
-              <p className="about__overview">{movieData.overview}</p>
-            </div>
+            <Similar
+              collection={collection}
+              onPostClick={onPostClick}
+              onAboutPopupOpen={onAboutPopupOpen}
+              isOpen={isOpen}
+            />
           </div>
-          <Similar
-            collection={collection}
-            onPostClick={onPostClick}
-            onAboutPopupOpen={onAboutPopupOpen}
-            isOpen={isOpen}
-          />
-
-          <button
-            type="button"
-            className="about__close_button"
-            onClick={onClose}
-          />
         </div>
+        <button
+          type="button"
+          className="about__close_button"
+          onClick={onClose}
+        />
       </div>
     </section>
   );
 }
-export default About;
+export default React.memo(About);
